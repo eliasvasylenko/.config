@@ -1,0 +1,20 @@
+[window]
+command=xtitle -s | cat
+interval=persist
+
+#color=#F79494
+
+[weather]
+command=curl -Ss 'https://wttr.in/Hollinwood?format=3'
+interval=3600
+color=#A4C2F4
+
+[ip]
+command=hostname -i | awk '{ print "IP:" $1 }'
+interval=30
+color=#91E78B
+
+[time]
+command=date +"%a %e %b %T"
+interval=1
+
