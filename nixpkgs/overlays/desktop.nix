@@ -3,7 +3,7 @@ self: super: {
     let
       desktopProfile = writeText "desktop-profile" ''
         export TERMINAL=alacritty
-	export EDITOR=vim
+        export EDITOR=vim
       '';
     in self.buildEnv {
       name = "desktop";
@@ -19,11 +19,22 @@ self: super: {
         htop
         tmux
         unzip
-        neovim
-	steam
+        (neovim.override {
+          configure = {
+            customRC = ''
+	      set nu
+	      set mouse=a
+            '';
+            packages.myVimPackage = with pkgs.vimPlugins; {
+              start = [ editorconfig-vim ];
+              opt = [ ];
+            };
+          };
+        })
+        steam
         multimc openjdk8
         inkscape
-	zplug
+        zplug perl
       ];
       pathsToLink = [ "/share" "/bin" "/etc" ];
       extraOutputsToInstall = [ "man" "doc" ];
