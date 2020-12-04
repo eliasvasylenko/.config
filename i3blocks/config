@@ -1,9 +1,3 @@
-[window]
-command=xtitle -s | cat
-interval=persist
-
-#color=#F79494
-
 [weather]
 command=curl -Ss 'https://wttr.in/Hollinwood?format=3'
 interval=3600
