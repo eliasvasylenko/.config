@@ -59,7 +59,7 @@ self: super: {
               set mouse=a
             '';
             packages.myVimPackage = with pkgs.vimPlugins; {
-              start = [ editorconfig-vim YouCompleteMe ];
+              start = [ editorconfig-vim ];
               opt = [ ];
             };
           };
