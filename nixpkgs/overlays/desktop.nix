@@ -9,7 +9,7 @@ self: super: {
       name = "desktop";
       paths = [
         (wrapFirefox firefox-unwrapped {
-          extraExtensions = [
+          nixExtensions = [
             (fetchFirefoxAddon {
               name = "ublock";
               url = "https://addons.mozilla.org/firefox/downloads/file/3679754/ublock_origin-1.31.0-an+fx.xpi";
