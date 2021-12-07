@@ -1,5 +1,9 @@
 source $(nix path-info nixpkgs.zplug)/init.zsh
 
+HISTFILE=$ZDOTDIR/.zsh_history
+SAVEHIST=10000
+HISTSIZE=10000
+
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-autosuggestions"

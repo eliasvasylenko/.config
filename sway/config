@@ -8,12 +8,15 @@ font pango:monospace 8
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock --nofork
+exec swayidle timeout 300 'swaymsg output \* dpms off' \
+	resume 'swaymsg output \* dpms on' \
+	before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
+	lock 'swaylock'
 
 output VGA-1 pos 0 0
 output DVI-I-2 pos 1920 0
 
-input keyboard0 xkb_layout gb
+input * xkb_layout "gb"
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
