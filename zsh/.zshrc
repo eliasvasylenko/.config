@@ -1,4 +1,4 @@
-source $(nix path-info nixpkgs.zplug)/init.zsh
+source $(nix-build '<nixpkgs>' -A zplug)/init.zsh
 
 HISTFILE=$ZDOTDIR/.zsh_history
 SAVEHIST=10000
