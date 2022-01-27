@@ -9,19 +9,6 @@ self: super: {
       name = "desktop";
       paths = [
         (wrapFirefox firefox-unwrapped {
-          nixExtensions = [
-            (fetchFirefoxAddon {
-              name = "ublock";
-              url = "https://addons.mozilla.org/firefox/downloads/file/3679754/ublock_origin-1.31.0-an+fx.xpi";
-              sha256 = "1h768ljlh3pi23l27qp961v1hd0nbj2vasgy11bmcrlqp40zgvnr";
-            })
-            (fetchFirefoxAddon {
-              name = "noscript";
-              url = "https://addons.mozilla.org/firefox/downloads/file/3673546/noscript_security_suite-11.1.5-an+fx.xpi";
-              sha256 = "162kxcai5yqxiys4dngz8yqqkdqmp4n86kwas5nbdwq20p4nkjh4";
-            })
-          ];
-
           extraPolicies = {
             CaptivePortal = false;
             DisableFirefoxStudies = true;
@@ -64,8 +51,6 @@ self: super: {
             };
           };
         })
-        steam
-        multimc openjdk8
         inkscape
         zplug perl
       ];
