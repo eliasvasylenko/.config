@@ -53,6 +53,7 @@ self: super: {
         })
         inkscape
         zplug perl
+	spotify
       ];
       pathsToLink = [ "/share" "/bin" "/etc" ];
       extraOutputsToInstall = [ "man" "doc" ];
